@@ -1,0 +1,129 @@
+.App{
+  background-color: whitesmoke;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.header{
+  width: 100%;
+  margin-top:20px;
+	height: 10vh;
+  display:flex;
+  justify-content: space-around;
+	
+}
+.header p{
+  margin-left: auto;
+  margin-right: 20px;
+}
+.header img{
+  margin-left: 20px;
+}
+.heading{
+  height: 8vh;
+  background: linear-gradient(to right, #33ccff 0%, blue 100%);
+  padding-top: 10px;
+}
+.mt{
+  margin-left: 30px;
+}
+
+.middle{
+  height:66vh;
+  margin-top: 10px;
+}
+
+.card{
+  background-color: white;
+  padding-top: 20px;
+}
+.an{
+  padding-bottom: 15px;
+  margin:10px;
+  padding-left: 10px;
+}
+
+.qno{
+  border-radius: 30px;
+  background-color: rgb(160, 157, 157);
+  margin-top: 20px ;
+  text-align: right; 
+  padding: 10px; 
+}
+.q{
+  padding-top: 17px;
+  text-align: right;
+}
+.center{
+  text-align: center;
+}
+.ima{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.flex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.danger{
+  margin-left: 20px;
+
+  background: linear-gradient(to right, #ff5233 0%, rgb(233, 26, 140) 100%);
+  border-radius: 20px;
+}
+.again{
+  margin-top: 10px;
+}
+.submit{
+  margin-left: 350px;
+  background: linear-gradient(to right, #ff5233 0%, rgb(233, 26, 140) 100%);
+}
+.button{
+  margin:20px;
+  border: 1px solid black;
+}
+.border{
+  border-top: 1px solid black;
+}
+
+
+
+
+
+
