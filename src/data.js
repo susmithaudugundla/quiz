@@ -2,100 +2,100 @@ const Questions=[
     {
         sno:1,
         question:"Inside which HTML element do we put the JavaScript?",
-        answers:{
-            'a':"<javascript>",
-            'b':"<script>",
-            'c':"<scripting>",
-            'd':"<js>"
-        },
-        'correctAnswer':"b"
+        answers:[
+            {option:"a",optionVal:"<javascript>"},
+            {option:"b",optionVal:"<script>"},
+            {option:"c",optionVal:"<scripting>"},
+            {option:"d",optionVal:"<js>"}
+        ],
+        correctAnswer:'b'
     },
     {
         sno:2,
         question:'Where is the correct place to insert a JavaScript?',
-        answers:{
-            a:'The <head> section',
-            b:'The <body> section',
-            c:'Both the <head> section and the <body> section are correct'
-        },
+        answers:[
+            {option:"a",optionVal:'The <head> section'},
+            {option:"b", optionVal:'The <body> section'},
+            {option:"c", optionVal:'Both the <head> section and the <body> section are correct'}
+        ],
         correctAnswer:'c'
     },
     {
         sno:3,
         question:'The external JavaScript file must contain the <script> tag.',
-        answers:{
-            a:'True',
-            b:'False'
-        },
+        answers:[
+            {option:"a", optionVal:'True'},
+            {option:"b", optionVal:'False'}
+        ],
         correctAnswer:'b'
     },
     {
         sno:4,
         question:'How do you write "Hello World" in an alert box?',
-        answers:{
-            a:'alertBox("Hello World");',
-            b:'alert("Hello World");',
-            c:'msgBox("Hello World");',
-        },
+        answers:[
+            {option:"a",optionVal:'alertBox("Hello World");'},
+            {option:"b",optionVal:'alert("Hello World");'},
+            {option:"c",optionVal:'msgBox("Hello World");'},
+        ],
         correctAnswer:'b'
     },
     {
         sno:5,
         question:'How do you create a function in JavaScript?',
-        answers:{
-            a:'function = myFunction()',
-            b:'function myFunction()',
-            c:'function:myFunction()'
-        },
+        answers:[
+            {option:"a",optionVal:'function = myFunction()'},
+            {option:"b",optionVal:'function myFunction()'},
+            {option:"c",optionVal:'function:myFunction()'}
+        ],
         correctAnswer:'b'
     },
     {
         sno:6,
         question:'How do you call a function named "myFunction"?',
-        answers:{
-            a:'myFunction()',
-            b:'call function myFunction()',
-            c:'call myFunction()'
-        },
+        answers:[
+            {option:"a",optionVal:'myFunction()'},
+            {option:"b",optionVal:'call function myFunction()'},
+            {option:"c",optionVal:'call myFunction()'}
+        ],
         correctAnswer:'a'
     },
     {
         sno:7,
         question:'How to write an IF statement in JavaScript?',
-        answers:{
-            a:'if i = 5 then',
-            b:'if (i == 5)',
-            c:'if i = 5'
-        },
+        answers:[
+            {option:"a",optionVal:'if i = 5 then'},
+            {option:"b",optionVal:'if (i == 5)'},
+            {option:"c",optionVal:'if i = 5'}
+        ],
         correctAnswer:'b'
     },
     {
         sno:8,
         question:'How does a WHILE loop start?',
-        answers:{
-            a:'while (i <= 10; i++)',
-            b:'while i = 1 to 10',
-            c:'while (i <= 10)'
-        },
+        answers:[
+            {option:"a",optionVal:'while (i <= 10; i++)'},
+            {option:"b",optionVal:'while i = 1 to 10'},
+            {option:"c",optionVal:'while (i <= 10)'}
+        ],
         correctAnswer:'c'
     },
     {
         sno:9,
         question:'JavaScript is the same as Java.',
-        answers:{
-            a:'False',
-            b:'True'
-        },
+        answers:[
+            {option:"a",optionVal:'False'},
+            {option:"b",optionVal:'True'}
+        ],
         correctAnswer:'a'
     },
     {
         sno:10,
         question:'Is JavaScript case-sensitive?',
-        answers:{
-            a:'Yes',
-            b:'No',
-            c: 'None of the above'
-        },
+        answers:[
+            {option:"a",optionVal:'Yes'},
+            {option:"b",optionVal:'No'},
+            {option:"c",optionVal: 'None of the above'}
+        ],
         correctAnswer:'a'
     }
 

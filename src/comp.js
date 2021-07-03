@@ -11,12 +11,20 @@ class Comp extends React.Component{
         super(props);
         this.state={
             current:Question[0],
-            choosenValues:["","","","","","","","","",""],
+            choosenValues:[],
             submitted:false,
             marksScored:0,
             correctQuestions:0,
-            wrongQuestions:0
+            wrongQuestions:0,
+            alert:false,
         }
+    }
+    componentDidMount(){
+        let arr = [];
+        for( let i=0; i < Questions.length; i++ ){
+            arr.push("");
+        }
+        this.setState({choosenValues:arr});
     }
     prev = () => {
         let cur = this.state.current["sno"];
@@ -34,7 +42,7 @@ class Comp extends React.Component{
     }
     onsubmit = () => {
         let marksScored = 0, correctQuestions = 0, wrongQuestions = 0;
-        for( let i=0; i < 10; i++ ){
+        for( let i=0; i < Questions.length; i++ ){
             if(this.state.choosenValues[i] == Questions[i].correctAnswer){
                 marksScored += 2;
                 correctQuestions++;
@@ -47,20 +55,24 @@ class Comp extends React.Component{
         this.setState({marksScored:marksScored , correctQuestions:correctQuestions, wrongQuestions:wrongQuestions ,submitted:true});
     }
     submit = () => {
-        confirmAlert({
-          title: 'Confirmation',
-          message: 'Are you sure you want to submit the test?\nPlease Understand you can\'t come back',
-          buttons: [
-            {
-              label: 'Yes',
-              onClick:()=> this.onsubmit()
-            },
-            {
-              label: 'No',
-              onClick: () => alert('Click No')
-            }
-          ]
-        });
+        this.setState({alert:true});
+        // confirmAlert({
+        //   title: 'Confirmation',
+        //   message: 'Are you sure you want to submit the test?\nPlease Understand you can\'t come back',
+        //   buttons: [
+        //     {
+        //       label: 'Yes',
+        //       onClick:()=> this.onsubmit()
+        //     },
+        //     {
+        //       label: 'No',
+        //       onClick: () => alert('Click No')
+        //     }
+        //   ]
+        // });
+    }
+    dismissAlert = () =>{
+        this.setState({alert:false});
     }
     render(){
         if( this.state.submitted ){
@@ -112,6 +124,7 @@ class Comp extends React.Component{
         else{
             return(
                 <div>
+                    
                     <div className="header">
                         <img src="" alt="logo" className="mr-auto"></img>
                         <p className="ml-auto"><i class="fa fa-sign-out"></i> Exit</p>
@@ -124,7 +137,15 @@ class Comp extends React.Component{
                             <div className="col-7">
                                 <div className="card container">
                                     <p>{this.state.current.question}</p>
-                                    <div>{
+                                    <div>
+                                        {
+                                            this.state.current.answers.map((val)=>
+                                                
+                                            <div className="card an" onClick={()=>this.onclick(val.option)} style={{ backgroundColor: this.state.choosenValues[this.state.current["sno"]-1] == val.option? 'rgb(160, 157, 157)': 'white'}} > A. {val.optionVal} </div> 
+                                            
+                                            )
+                                        }
+                                        {/* {
                                         "a" in this.state.current.answers  ? 
                                         <div className="card an" onClick={()=>this.onclick("a")} style={{ backgroundColor: this.state.choosenValues[this.state.current["sno"]-1] == "a"? 'rgb(160, 157, 157)': 'white'}} > A. {this.state.current.answers["a"]} </div> : <div></div> }
                                         {"b" in this.state.current.answers  ? 
@@ -132,7 +153,7 @@ class Comp extends React.Component{
                                         {"c" in this.state.current.answers  ? 
                                             <div className="card an" onClick={()=>this.onclick("c")} style={{ backgroundColor: this.state.choosenValues[this.state.current["sno"]-1] == "c"? 'rgb(160, 157, 157)': 'white'}}>C. {this.state.current.answers["c"]} </div> : <div></div> }
                                         {"d" in this.state.current.answers  ? 
-                                            <div className="card an" onClick={()=>this.onclick("d")} style={{ backgroundColor: this.state.choosenValues[this.state.current["sno"]-1] == "d"? 'rgb(160, 157, 157)': 'white'}}>D. {this.state.current.answers["d"]} </div> : <div></div> }
+                                            <div className="card an" onClick={()=>this.onclick("d")} style={{ backgroundColor: this.state.choosenValues[this.state.current["sno"]-1] == "d"? 'rgb(160, 157, 157)': 'white'}}>D. {this.state.current.answers["d"]} </div> : <div></div> } */}
                                     </div>
                                     
                                 </div>
@@ -144,12 +165,37 @@ class Comp extends React.Component{
                             <div className="col-2"></div>
                             <div className="col-6">
                             <button className="btn button" disabled={this.state.current["sno"] == 1 ? true : false} onClick={this.prev}>Prev</button>
-                            <button className="btn button" disabled={this.state.current["sno"] == 10 ? true : false} onClick={this.next}>Next</button>
+                            <button className="btn button" disabled={this.state.current["sno"] == Questions.length ? true : false} onClick={this.next}>Next</button>
                             <button className="btn submit" onClick={this.submit}>Submit</button>
+                            {/* <div id="popup1" class="overlay">
+                                    <div class="popup">
+                                        <h2>Here i am</h2>
+                                        <a class="close" href="#">&times;</a>
+                                        <div class="content">
+                                            Thank to pop me out of that button, but now i'm done so you can close this window.
+                                        </div>
+                                    </div>
+                                </div>  */}
                             </div>
                             <div className="col-4"></div>
                         </div>
                         </footer>
+                        {
+                                this.state.alert == true ? 
+                                <div id="popup1" class="overlay">
+                                    <div class="popup">
+                                    <p><i className="fa fa-exclamation-circle icon"></i> Confirmation</p>
+                                    <p className="b"></p>
+                                        <div class="content">
+                                            Are you sure you want to submit the test? <b>Please Understand you can't come back to the test once submitted</b>
+                                            <br></br>
+                                            <br></br>
+                                            <button className="btn yes" onClick={this.onsubmit}>YES, SUBMIT</button>
+                                            <button className="btn button" onClick={this.dismissAlert}>NO</button>
+                                        </div>
+                                    </div>
+                                </div> : <div></div>
+                            }
                 </div>
             );
         }

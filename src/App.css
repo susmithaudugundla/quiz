@@ -123,6 +123,77 @@
 }
 
 
+.yes{
+  background: linear-gradient(to right, #ff5233 0%, rgb(233, 26, 140) 100%);
+  margin-left: 270px;
+}
+.icon{
+  margin-top: 0px;
+  font-size:28px;
+  color:rgb(248, 133, 26);
+  margin-right: 8px;
+}
+.b{
+  border: 1px solid black;
+  width: 100%;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  opacity: 1;
+  
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+   margin: 70px auto; 
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  position: relative;
+  /* transition: all 5s ease-in-out; */
+  margin-top: 200px;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+
+  .box{
+    width: 70%;
+  }
+  .popup{
+    width: 40%;
+  }
+
+
 
 
 
